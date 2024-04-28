@@ -28,6 +28,12 @@ public class StreamStudy {
         List<String> words = Arrays.asList(contents.split("[\\P{L}]+"));
 
         // TODO 이 부분에 구현한다.
+        words.stream()
+                .filter(w -> w.length() > 12)
+                .sorted()
+                .distinct()
+                .map(w -> w.toLowerCase())
+                .forEach(w -> System.out.println(w));
     }
 
     public static List<Integer> doubleNumbers(List<Integer> numbers) {
